@@ -26,9 +26,24 @@ public class Neuron {
     }
 
     private void CompileOutput(float output) {
-        child.ReceiveInputs(new NeuronInput[] { 
-            new NeuronInput() { input = output, weight = neuronWeight }
-        });
+        if (output == 0f) {
+            return;
+        }
+
+        if (output > 0f) {
+            Excitate(output);
+            return;
+        }
+
+        Inibe(output);
+    }
+
+    private void Excitate(float excitateAmount) {
+
+    }
+
+    private void Inibe(float inibeAmount) {
+
     }
 }
 
